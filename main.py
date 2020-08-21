@@ -36,7 +36,64 @@ cases = {
             "co2": 0.6,
         },
         "path": "01_LPFD_Filtered/casesResults",
-    }
+    },
+    "LP Operação": {
+        "composition": {
+            "methane": 68.72,
+            "ethane": 11.11,
+            "propane": 9.04,
+            "ibutane": 1.57,
+            "nbutane": 3.40,
+            "ipentane": 0.88,
+            "npentane": 1.15,
+            "hexane": 0.83,
+            "heptane": 0.58,
+            "octane": 0.21,
+            "nonane": 0.02,
+            "decane": 0.01,
+            "n2": 0.91,
+            "co2": 0.25,
+        },
+        "path": "02_LPOperacao_Filtered/casesResults",
+    },
+    "HP FD": {
+        "composition": {
+            "methane": 73.27,
+            "ethane": 12.41,
+            "propane": 7.78,
+            "ibutane": 0.44,
+            "nbutane": 3.06,
+            "ipentane": 0.2,
+            "npentane": 0.92,
+            "hexane": 0.37,
+            "heptane": 0.12,
+            "octane": 0.01,
+            "nonane": 0.0,
+            "decane": 0.0,
+            "n2": 0.6,
+            "co2": 0.62,
+        },
+        "path": "03_HPFD_Filtered/casesResults",
+    },
+    "HP Operação": {
+        "composition": {
+            "methane": 72.16,
+            "ethane": 11.36,
+            "propane": 8.78,
+            "ibutane": 1.40,
+            "nbutane": 2.92,
+            "ipentane": 0.63,
+            "npentane": 0.78,
+            "hexane": 0.34,
+            "heptane": 0.13,
+            "octane": 0.02,
+            "nonane": 0.00,
+            "decane": 0.00,
+            "n2": 0.96,
+            "co2": 0.26,
+        },
+        "path": "04_HPOperacao_Filtered/casesResults",
+    },
 }
 
 # ----------------------
@@ -337,10 +394,7 @@ def update_results(case0, p_ext0, T_cool0, case1, p_ext1, T_cool1, T_units, p_un
 
     """
 
-    path_p52 = (
-        Path(__file__).parent
-        / "Filtrados"
-    )
+    path_p52 = Path(__file__).parent / "Filtrados"
 
     p_ext0 = Q_(p_ext0, p_units)
     case_data0 = cases[case0]
