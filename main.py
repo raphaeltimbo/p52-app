@@ -338,8 +338,8 @@ def update_results(case0, p_ext0, T_cool0, case1, p_ext1, T_cool1, T_units, p_un
     """
 
     path_p52 = (
-        Path.home()
-        / "Dropbox/trabalho/sequi-assessoramento/p52/notebooks/resultados/Filtrados"
+        Path(__file__).parent
+        / "Filtrados"
     )
 
     p_ext0 = Q_(p_ext0, p_units)
@@ -374,6 +374,6 @@ def update_results(case0, p_ext0, T_cool0, case1, p_ext1, T_cool1, T_units, p_un
 
 if __name__ == "__main__":
     # debug mode
-    # app.run_server(debug=True, port=8890)
+    app.run_server(debug=True, port=8890)
     # production
-    app.run_server(host="0.0.0.0", port=8050)
+    # app.run_server(host="0.0.0.0", port=8050)
