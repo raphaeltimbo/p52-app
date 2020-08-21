@@ -155,7 +155,7 @@ units_control = dbc.Card(
                             ),
                         ]
                     ),
-                    md=6,
+                    md=4,
                 ),
                 dbc.Col(
                     dbc.FormGroup(
@@ -170,7 +170,7 @@ units_control = dbc.Card(
                             ),
                         ]
                     ),
-                    md=6,
+                    md=4,
                 ),
                 dbc.Col(
                     dbc.FormGroup(
@@ -185,7 +185,7 @@ units_control = dbc.Card(
                             ),
                         ]
                     ),
-                    md=6,
+                    md=4,
                 ),
             ]
         ),
