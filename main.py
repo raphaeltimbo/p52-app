@@ -155,7 +155,7 @@ units_control = dbc.Card(
                             ),
                         ]
                     ),
-                    md=4,
+                    md=6,
                 ),
                 dbc.Col(
                     dbc.FormGroup(
@@ -170,7 +170,7 @@ units_control = dbc.Card(
                             ),
                         ]
                     ),
-                    md=4,
+                    md=6,
                 ),
                 dbc.Col(
                     dbc.FormGroup(
@@ -185,7 +185,7 @@ units_control = dbc.Card(
                             ),
                         ]
                     ),
-                    md=4,
+                    md=6,
                 ),
             ]
         ),
@@ -195,7 +195,7 @@ units_control = dbc.Card(
 
 
 def figures(n):
-    fig = dbc.Col(dcc.Graph(id=f"fig{n}"), md=4)
+    fig = dbc.Col(dcc.Graph(id=f"fig{n}"), md=6)
 
     return fig
 
@@ -206,12 +206,12 @@ def figures(n):
 
 app.layout = dbc.Container(
     [
-        html.H1("P52"),
+        html.H3("Análise da temperatura de injeção do gás de selagem dos compressores da P52", style={"width": '65%'}),
         html.Hr(),
-        dbc.Row([dbc.Col(units_control, md=8)]),
-        dbc.Row([dbc.Col(controls(0), md=4), dbc.Col(controls(1), md=4)]),
+        dbc.Row([dbc.Col(units_control, md=12)]),
+        dbc.Row([dbc.Col(controls(0), md=6), dbc.Col(controls(1), md=6)]),
         dbc.Row([figures(0), figures(1)]),
-        dbc.Row([dbc.Col(dbc.Table(id="results_table"), md=8)]),
+        dbc.Row([dbc.Col(dbc.Table(id="results_table"), md=12)]),
     ],
     fluid=True,
 )
