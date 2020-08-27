@@ -14,6 +14,36 @@ Q_ = ccp.Q_
 
 app = dash.Dash(external_stylesheets=[dbc.themes.FLATLY])
 
+# GA
+app.index_string = """<!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176602046-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-176602046-1');
+</script>
+{%metas%}
+<title>{%title%}</title>
+{%favicon%}
+{%css%}
+</head>
+<body>
+{%app_entry%}
+<footer>
+{%config%}
+{%scripts%}
+{%renderer%}
+</footer>
+</body>
+</html>
+"""
+
+
 # ----------------------
 # Data
 # ----------------------
@@ -206,7 +236,10 @@ def figures(n):
 
 app.layout = dbc.Container(
     [
-        html.H3("Análise da temperatura de injeção do gás de selagem dos compressores da P52", style={"width": '65%'}),
+        html.H3(
+            "Análise da temperatura de injeção do gás de selagem dos compressores da P52",
+            style={"width": "65%"},
+        ),
         html.Hr(),
         dbc.Row([dbc.Col(units_control, md=12)]),
         dbc.Row([dbc.Col(controls(0), md=6), dbc.Col(controls(1), md=6)]),
