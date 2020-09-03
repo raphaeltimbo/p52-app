@@ -1,3 +1,4 @@
+import sys
 import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
@@ -461,6 +462,8 @@ def update_results(case0, p_ext0, T_cool0, case1, p_ext1, T_cool1, T_units, p_un
 
 if __name__ == "__main__":
     # debug mode
-    # app.run_server(debug=True, port=5006)
+    if 'debug' in sys.argv:
+        app.run_server(debug=True, port=5006)
     # production
-    app.run_server(host="0.0.0.0", port=443, ssl_context=('fullchain.pem', 'privkey.pem'))
+    keys_path = Path.home() / 'keys'
+    app.run_server(host="0.0.0.0", port=443, ssl_context=(keys_path / 'fullchain.pem', keys_path / 'privkey.pem'))
