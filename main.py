@@ -463,4 +463,4 @@ if __name__ == "__main__":
     # debug mode
     # app.run_server(debug=True, port=5006)
     # production
-    app.run_server(host="0.0.0.0", port=5006)
+    app.run_server(host="0.0.0.0", port=443, ssl_context=('fullchain.pem', 'privkey.pem'))
