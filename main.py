@@ -134,6 +134,8 @@ cases = {
 
 def controls(n):
     case_labels = ["A", "B"]
+    p_initial_values = [2428.325, 2200]
+    T_initial_values = [10, 5]
     c = dbc.Card(
         [
             dbc.FormGroup(
@@ -149,13 +151,13 @@ def controls(n):
             dbc.FormGroup(
                 [
                     dbc.Label("Pressão de Extração"),
-                    dbc.Input(id=f"p_ext{n}", type="number", value=2000),
+                    dbc.Input(id=f"p_ext{n}", type="number", value=p_initial_values[n]),
                 ]
             ),
             dbc.FormGroup(
                 [
                     dbc.Label("Queda de Temperatura na Tubulação"),
-                    dbc.Input(id=f"T_cool{n}", type="number", value=10),
+                    dbc.Input(id=f"T_cool{n}", type="number", value=T_initial_values[n]),
                 ]
             ),
         ],
